@@ -1,0 +1,169 @@
+.advantages {
+	@apply relative !pl-0 z-[1];
+	// .advantages__bg
+	&__bg {
+		@apply block absolute top-0 -translate-y-full left-0 h-auto w-full object-cover -z-[1];
+
+		& > :nth-child(1) {
+			@apply fill-[#CED2D5];
+		}
+		& > :nth-child(2) {
+			@apply fill-[#7A868E];
+		}
+
+		.dark & {
+			& > :nth-child(1) {
+				@apply fill-[#7A868E];
+			}
+			& > :nth-child(2) {
+				@apply fill-[#CED2D5];
+			}
+		}
+	}
+
+	// .advantages__blocks
+	&__blocks {
+		.light & {
+			--section-bg: theme("colors.darkLight");
+			--title-color: theme("colors.accent");
+			--icon-color: theme("colors.accent");
+			--text-color: theme("colors.white");
+		}
+		.dark & {
+			--section-bg: theme("colors.bg");
+			--title-color: theme("colors.text");
+			--icon-color: theme("colors.accent");
+			--text-color: theme("colors.text");
+		}
+		& > :nth-child(1) {
+			.light & {
+				--section-bg: theme("colors.darkLight");
+				--title-color: theme("colors.accent");
+			}
+			.dark & {
+				--section-bg: theme("colors.white");
+				--title-color: theme("colors.dark");
+				--text-color: theme("colors.dark");
+			}
+			& .advantages__container {
+				@apply pt-[38rem] pb-[36rem];
+				@screen sm {
+					@apply pt-[36rem] pb-[58rem];
+				}
+				@screen xl {
+					@apply pt-[71rem] pb-[93rem];
+				}
+			}
+		}
+
+		& > :nth-child(2) {
+			.light & {
+				--section-bg: theme("colors.accent");
+				--title-color: theme("colors.white");
+				--icon-color: theme("colors.white");
+				--text-color: theme("colors.dark");
+			}
+			.dark & {
+				--section-bg: theme("colors.accent");
+				--icon-color: theme("colors.white");
+				--text-color: theme("colors.dark");
+			}
+			& .advantages__container {
+				@apply pt-[34rem] pb-[44rem];
+				@screen sm {
+					@apply pt-[44rem] pb-[55rem];
+				}
+				@screen xl {
+					@apply py-[116rem];
+				}
+			}
+		}
+
+		& > :nth-child(3) {
+			.light & {
+				--section-bg: theme("colors.white");
+				--title-color: theme("colors.dark");
+				--icon-color: theme("colors.accent");
+				--text-color: theme("colors.dark");
+			}
+			.dark & {
+				--title-color: theme("colors.accent");
+			}
+
+			& .advantages__container {
+				@apply pt-[34rem] pb-[50rem];
+				@screen sm {
+					@apply pt-[40rem] pb-[100rem];
+				}
+				@screen xl {
+					@apply pt-[78rem] pb-[135rem];
+				}
+			}
+		}
+	}
+
+	&__block {
+		@apply relative bg-[var(--section-bg)] cursor-pointer;
+		&.hide {
+			.advantages__list {
+				@apply opacity-0 delay-0;
+			}
+
+			.advantages__row {
+				@apply md:max-h-[245rem] sm:max-h-[140rem]  max-h-[44rem] overflow-hidden sm:-mb-[80rem];
+				// sm:-mb-[90rem]
+				@media (min-width: 2400px) {
+					@apply max-h-[340rem];
+				}
+			}
+		}
+	}
+	// .advantages__decor
+	&__decor {
+		@apply absolute w-screen h-fit object-cover left-0 top-0 xl:-translate-y-[98%] sm:-translate-y-1/2 -translate-y-1/4 fill-[var(--section-bg)];
+	}
+	// .advantages__container
+	&__container {
+		@apply xl:py-[120rem] sm:py-15 py-10 lg:pl-[180rem];
+	}
+	// .advantages__row
+	&__row {
+		@apply grid xl:grid-cols-[992fr_668fr] sm:grid-cols-[445fr_283fr] sm:gap-10 gap-8 sm:items-center  h-full mb-0 transition-all duration-500;
+		// transition: all 0.5s ease-in-out;
+		max-height: calc-size(max-content, size);
+	}
+
+	// .advantages__content
+	&__content {
+		@apply xl:space-y-15 sm:space-y-[13rem] space-y-[26rem] relative z-[1];
+	}
+	// .advantages__title
+	&__title {
+		@apply font-gilroy xl:text-[100rem] sm:text-[48rem] text-[40rem] font-bold leading-[1.1] uppercase xl:tracking-[2rem] sm:tracking-[0.96rem] tracking-[0.8rem] text-[var(--title-color)];
+	}
+	// .advantages__list
+	&__list {
+		@apply xl:pl-3 sm:pl-1.5 grid xl:gap-6 sm:gap-1 gap-4 transition-opacity duration-300  delay-200;
+	}
+	// .advantages__item
+	&__item {
+		@apply font-gilroy xl:text-[22rem] sm:text-xs text-sm font-semibold leading-[1.2] flex items-center max-sm:items-start xl:gap-5 sm:gap-2.5 gap-3 sm:max-w-[75%] text-[var(--text-color)];
+
+		@media (max-width: theme("screens.lg")) {
+			& br {
+				@apply hidden;
+			}
+		}
+	}
+	// .advantages__item
+	&__item-icon {
+		@apply shrink-0 xl:size-12  size-5 object-contain text-[var(--icon-color)]  max-sm:-mt-0.5;
+	}
+	// .advantages__image
+	&__image {
+		@apply relative xl:aspect-[668/440] aspect-[283/187];
+		& img {
+			@apply xl:rounded-xl rounded-[15rem] absolute inset-0 size-full object-cover bg-gray-200;
+		}
+	}
+}

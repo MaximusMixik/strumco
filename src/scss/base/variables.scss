@@ -1,0 +1,35 @@
+@layer base {
+	:root {
+		--white: 255, 255, 255; //#FFF
+		--dark: 28, 37, 45; //#1C252D
+		--darkLight: 45, 56, 64; //#2D3840
+		--lightGray: 245, 246, 247; //#
+		--accent: 192, 219, 77; // #C0DB4D
+		// background-color: #f5f6f7;
+	}
+
+	// transition for all elements on page
+	*:before,
+	*:after,
+	* {
+		@apply transition-colors duration-500 ease-in-out;
+	}
+}
+
+.light {
+	--bg: 255, 255, 255;
+	--bgLight: 245, 246, 247;
+	--text: 28, 37, 45;
+}
+.dark {
+	--bg: 28, 37, 45;
+	--bgLight: 58, 71, 81;
+	--text: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: 28, 37, 45;
+		--text: 255, 255, 255;
+	}
+}

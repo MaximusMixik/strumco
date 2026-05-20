@@ -1,0 +1,314 @@
+.partners {
+	@apply bg-[#E4E7E8] fill-[#E4E7E8] pt-[41rem] pb-[75rem] relative z-[1];
+
+	.dark & {
+		@apply bg-[#7A868E] fill-[#7A868E];
+	}
+
+	@screen sm {
+		// @apply pt-[32rem] pb-[115rem];
+		@apply pt-[100rem] pb-[115rem];
+	}
+	@screen xl {
+		@apply pt-[142rem] pb-[194rem];
+	}
+	// .partners__container
+	&__container {
+	}
+	// .partners__header
+	&__header {
+		@apply sm:grid xl:grid-cols-5 sm:grid-cols-3 sm:gap-4;
+	}
+
+	// .partners__title
+	&__title {
+		@apply xl:col-span-3 sm:col-span-2 xl:text-[105rem] sm:text-[62rem] text-[40rem] font-gilroy font-bold xl:leading-[1.1] sm:leading-[1] leading-[1.1] uppercase xl:tracking-[2.1rem] sm:tracking-[1.24rem] tracking-[0.8rem] flex flex-col sm:-space-y-2.5 max-sm:px-3 relative z-[1];
+
+		span,
+		strong {
+			@apply w-full block;
+		}
+		span {
+			@apply text-text xl:pl-[4%] text-left;
+			// 40
+		}
+
+		strong {
+			@apply text-accent xl:pr-[11.5%] text-right;
+			// 118
+		}
+	}
+	// .partners__slider
+	&__slider {
+		@apply xl:-mt-[220rem] sm:-mt-[162rem] mt-[22rem] relative !overflow-visible;
+	}
+	// .partners__wrapper
+	&__wrapper {
+	}
+	// .partners__slide
+	&__slide {
+	}
+	// .partners__navigation
+	&__navigation {
+		@apply absolute sm:w-[calc(100%+60rem)] w-[calc(100%+12rem)] sm:left-[-30rem] left-[-6rem] top-1/2 -translate-y-1/2 z-10;
+	}
+}
+
+@mixin apply-mask-by-pos($pos, $r, $s, $x, $y) {
+	--_m: /calc(2 * #{$r}) calc(2 * #{$r}) radial-gradient(#000 70%, #0000 72%);
+	--_d: calc(#{$s} + #{$r});
+
+	$g: "";
+	$mask: "";
+
+	@if $pos == "tl" {
+		$g: conic-gradient(at #{$r} #{$r}, #000 75%, #0000 0);
+		$mask:
+			calc(var(--_d) + #{$x}) 0 var(--_m),
+			0 calc(var(--_d) + #{$y}) var(--_m),
+			radial-gradient(#{$s} at 0 0, #0000 99%, #000 calc(100% + 1px)) calc(#{$r} + #{$x}) calc(#{$r} + #{$y}),
+			#{$g} calc(var(--_d) + #{$x}) 0,
+			#{$g} 0 calc(var(--_d) + #{$y});
+	} @else if $pos == "tr" {
+		$g: conic-gradient(at calc(100% - #{$r}) #{$r}, #0000 25%, #000 0);
+		$mask:
+			calc(100% - var(--_d) - #{$x}) 0 var(--_m),
+			100% calc(var(--_d) + #{$y}) var(--_m),
+			radial-gradient(#{$s} at 100% 0, #0000 99%, #000 calc(100% + 1px)) calc(-1 * #{$r} - #{$x}) calc(#{$r} + #{$y}),
+			#{$g} calc(-1 * var(--_d) - #{$x}) 0,
+			#{$g} 0 calc(var(--_d) + #{$y});
+	} @else if $pos == "bl" {
+		$g: conic-gradient(from 180deg at #{$r} calc(100% - #{$r}), #0000 25%, #000 0);
+		$mask:
+			calc(var(--_d) + #{$x}) 100% var(--_m),
+			0 calc(100% - var(--_d) - #{$y}) var(--_m),
+			radial-gradient(#{$s} at 0 100%, #0000 99%, #000 calc(100% + 1px)) calc(#{$r} + #{$x}) calc(-1 * #{$r} - #{$y}),
+			#{$g} calc(var(--_d) + #{$x}) 0,
+			#{$g} 0 calc(-1 * var(--_d) - #{$y});
+	} @else if $pos == "br" {
+		$g: conic-gradient(from 90deg at calc(100% - #{$r}) calc(100% - #{$r}), #0000 25%, #000 0);
+		$mask:
+			calc(100% - var(--_d) - #{$x}) 100% var(--_m),
+			100% calc(100% - var(--_d) - #{$y}) var(--_m),
+			radial-gradient(#{$s} at 100% 100%, #0000 99%, #000 calc(100% + 1px))
+				calc(-1 * #{$r} - #{$x})
+				calc(-1 * #{$r} - #{$y}),
+			#{$g} calc(-1 * var(--_d) - #{$x}) 0,
+			#{$g} 0 calc(-1 * var(--_d) - #{$y});
+	}
+
+	mask: #{$mask};
+	mask-repeat: no-repeat;
+}
+
+@mixin inverted-corner($pos: "bl", $bg-color: #e4e7e8, $border-w: 1rem) {
+	$r: 16rem;
+	$s: 32rem;
+	$x: -6rem;
+	$y: -6rem;
+
+	position: relative;
+	background-color: #fff;
+	border-radius: $r;
+	overflow: hidden;
+
+	@include apply-mask-by-pos($pos, $r, $s, $x, $y);
+
+	&::after {
+		content: "";
+		position: absolute;
+		inset: $border-w; // Толщина рамки
+		background-color: $bg-color;
+
+		$r-in: calc(#{$r} - #{$border-w});
+		$s-in: calc(#{$s} + #{$border-w});
+
+		border-radius: $r-in;
+		@include apply-mask-by-pos($pos, $r-in, $s-in, $x, $y);
+	}
+
+	@media (max-width: theme("screens.sm")) {
+		$r-sm: 6rem;
+		$s-sm: 28rem;
+		$x-sm: 6rem;
+		$y-sm: -8rem;
+
+		border-radius: $r-sm;
+		@include apply-mask-by-pos($pos, $r-sm, $s-sm, $x-sm, $y-sm);
+
+		&::after {
+			border-radius: calc(#{$r-sm} - #{$border-w});
+			@include apply-mask-by-pos($pos, calc(#{$r-sm} - #{$border-w}), calc(#{$s-sm} + #{$border-w}), $x-sm, $y-sm);
+		}
+	}
+}
+.slide-partners {
+	@apply pointer-events-none;
+	&.swiper-slide-active {
+		@apply pointer-events-auto z-[1];
+	}
+	// .slide-partners__grid
+	&__grid {
+		@apply grid xl:grid-cols-5 sm:grid-cols-3 grid-cols-2 gap-2.5;
+
+		@screen xl {
+			& > :nth-child(4) {
+				@include inverted-corner("bl", #e4e7e8);
+			}
+			& > :nth-child(8) {
+				@include inverted-corner("br", #fff);
+				.slide-partners__icon {
+					@apply hidden;
+				}
+			}
+			& > :nth-child(9) {
+				@include inverted-corner("tl", #e4e7e8);
+			}
+			& > :nth-child(13) {
+				@include inverted-corner("tr", #e4e7e8);
+			}
+
+			.dark & {
+				& > :nth-child(4) {
+					@include inverted-corner("bl", #7a868e);
+				}
+				& > :nth-child(8) {
+					@include inverted-corner("br", #ced2d5, 0rem);
+				}
+				& > :nth-child(9) {
+					@include inverted-corner("tl", #7a868e);
+				}
+				& > :nth-child(13) {
+					@include inverted-corner("tr", #7a868e);
+				}
+			}
+		}
+		@media (max-width: theme("screens.xl")) and (min-width: theme("screens.sm")) {
+			& > :nth-child(3),
+			& > :nth-child(5),
+			& > :nth-child(8),
+			& > :nth-child(12),
+			& > :nth-child(13),
+			& > :nth-child(16),
+			& > :nth-child(15) {
+				@apply hidden;
+			}
+
+			& > :nth-child(4) {
+				@include inverted-corner("bl", #e4e7e8);
+			}
+			& > :nth-child(7) {
+				@include inverted-corner("br", #e4e7e8);
+				.slide-partners__icon {
+					@apply hidden;
+				}
+			}
+			& > :nth-child(9) {
+				@include inverted-corner("tl", #e4e7e8);
+			}
+			& > :nth-child(11) {
+				@include inverted-corner("tr", #e4e7e8);
+			}
+
+			.dark & {
+				& > :nth-child(4) {
+					@include inverted-corner("bl", #7a868e);
+				}
+				& > :nth-child(7) {
+					@include inverted-corner("br", #7a868e);
+					.slide-partners__icon {
+						@apply hidden;
+					}
+				}
+				& > :nth-child(9) {
+					@include inverted-corner("tl", #7a868e);
+				}
+				& > :nth-child(11) {
+					@include inverted-corner("tr", #7a868e);
+				}
+			}
+		}
+		@media (max-width: theme("screens.sm")) {
+			& > :nth-child(1),
+			& > :nth-child(4),
+			& > :nth-child(8),
+			& > :nth-child(9),
+			& > :nth-child(12),
+			& > :nth-child(13),
+			& > :nth-child(14),
+			& > :nth-child(15),
+			& > :nth-child(16),
+			& > :nth-child(18) {
+				@apply hidden;
+			}
+			& > :nth-child(2) {
+				@apply bg-transparent border-white;
+			}
+			& > :nth-child(5) {
+				@include inverted-corner("bl", #fff);
+			}
+			& > :nth-child(6) {
+				@include inverted-corner("br", #fff);
+				.slide-partners__icon {
+					@apply hidden;
+				}
+			}
+			& > :nth-child(7) {
+				@include inverted-corner("tl", #fff);
+			}
+			& > :nth-child(10) {
+				@include inverted-corner("tr", #fff);
+			}
+		}
+	}
+	// .slide-partners__spacer
+	&__spacer {
+		@apply xl:col-span-3 sm:col-span-2 max-sm:hidden;
+	}
+
+	// .slide-partners__item
+	&__item {
+		@apply grid place-items-center xl:min-h-[220rem] sm:min-h-[162rem] min-h-[110rem] sm:p-[30rem_50rem] p-[29rem_46rem]  bg-white sm:rounded-lg border border-solid border-transparent relative transition-all duration-300  rounded-[15rem];
+		// pointer-events-auto
+		.dark & {
+			@apply bg-[#CED2D5];
+		}
+		& > * {
+			position: relative;
+			z-index: 2;
+		}
+		// .slide-partners__item--white
+		&--white {
+			// pointer-events-none
+			@apply border-white bg-transparent hover:border-accent;
+			.dark & {
+				@apply bg-transparent;
+			}
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				@apply bg-accent;
+				.slide-partners__img {
+					@apply scale-125;
+				}
+				.slide-partners__icon {
+					@apply opacity-100;
+				}
+			}
+		}
+	}
+	// .slide-partners__shape
+	// &__shape {
+	// 	@apply absolute
+	// }
+
+	// .slide-partners__img
+	&__img {
+		@apply xl:aspect-[160/107] sm:aspect-[125/84] aspect-[83/54] xl:max-w-[160rem] sm:max-w-[125rem] max-w-[83rem] xl:max-h-[107rem] sm:max-h-[84rem] max-h-[54rem] object-contain scale-100 transition-transform duration-300;
+	}
+	// .slide-partners__icon
+	&__icon {
+		@apply absolute bottom-2.5 right-2.5 aspect-square size-10 p-1 opacity-0 transition-opacity duration-300 scale-100;
+	}
+}

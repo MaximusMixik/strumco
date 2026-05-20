@@ -1,0 +1,42 @@
+// .loaded,
+[data-watch] {
+	@apply opacity-0 transition-all duration-500;
+	&.top {
+		@apply -translate-y-[100rem];
+	}
+	&.bottom {
+		@apply translate-y-[100rem];
+	}
+	&.left {
+		@apply -translate-x-[100rem];
+	}
+	&.right {
+		@apply translate-x-[100rem];
+	}
+
+	&.scale {
+		@apply scale-90;
+	}
+	&.delay-1 {
+		@apply delay-200;
+	}
+	&.delay-2 {
+		@apply delay-[400ms];
+	}
+	&.delay-3 {
+		@apply delay-[600ms];
+	}
+	&.delay-4 {
+		@apply delay-[800ms];
+	}
+	&.delay-5 {
+		@apply delay-[900ms];
+	}
+	&.delay-6 {
+		@apply delay-1000;
+	}
+	// &.animate,
+	&._watcher-view {
+		@apply translate-x-0 translate-y-0 scale-100 opacity-100;
+	}
+}

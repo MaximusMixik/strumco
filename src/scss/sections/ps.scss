@@ -1,0 +1,25 @@
+.ps {
+	@apply pt-[73rem] pb-[78rem]  relative bg-bgLight fill-bgLight z-[1];
+	@screen sm {
+		@apply pt-[75rem] pb-[59rem];
+	}
+	@screen xl {
+		@apply pt-[160rem] pb-[181rem];
+	}
+
+	// .ps__container
+	&__container {
+	}
+	// .ps__content
+	&__content {
+		@apply grid xl:grid-cols-[623fr_912fr] sm:grid-cols-[270fr_500fr] xl:gap-[100rem] max-sm:gap-8 text-text;
+	}
+	// .ps__title
+	&__title {
+		@apply pr-8;
+	}
+	// .ps__text
+	&__text {
+		@apply space-y-5 max-lg:text-sm xl:pr-10;
+	}
+}

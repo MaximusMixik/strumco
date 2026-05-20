@@ -1,0 +1,253 @@
+// .pin-spacer {
+// 	// @media (max-width: theme("screens.lg")) {
+// 	// 	@apply bg-darkLight;
+// 	// }
+// }
+.app {
+	@apply relative !pl-0 lg:-mt-[150rem] -mt-[50rem] z-[1] sm:max-lg:pb-[237rem]; //lg:-mt-[150rem]
+	&.is-scrolled {
+		@apply bg-[#646565]  duration-0;
+	}
+	&__wrap {
+		@apply w-full  overflow-visible;
+	}
+
+	// .app__track
+	&__track {
+		@apply w-full min-w-fit;
+	}
+	// .app__content
+	&__content {
+		@apply flex   min-w-fit bg-transparent lg:min-h-dvh;
+		// min-h-[calc(100dvh-150rem)]
+		// lg:min-h-[1084rem]
+
+		& > * {
+			@apply shrink-0;
+		}
+	}
+	// .app__dark
+	&__dark {
+		@apply flex items-start  lg:pl-[180rem] sm:pl-8 pl-[15rem]  min-w-full bg-darkLight fill-darkLight text-white relative lg:mt-[150rem] mt-[50rem] max-lg:pt-10; //lg:mt-[150rem]
+		// lg:
+		& > * {
+			@apply shrink-0;
+		}
+		// .app__dark--phone-fixed
+		// &--phone-fixed {
+		// 	.app__text--1 {
+		// 		@apply ml-[calc(6.4vw+373rem)];
+		// 		// [25.6vw]
+		// 	}
+		// }
+		@media (max-width: theme("screens.lg")) {
+			&::before {
+				content: "";
+				@apply absolute top-0 left-0 w-full min-h-dvh bg-darkLight -z-[1];
+			}
+		}
+	}
+	// .app__end
+	&__end {
+		@apply self-stretch lg:pt-[198rem] lg:pb-[227rem]  bg-accent fill-accent relative lg:mt-[150rem] mt-[50rem] max-lg:pt-10;
+		@media (max-width: theme("screens.lg")) {
+			&::before {
+				content: "";
+				@apply absolute top-0 left-0 w-full min-h-[1000rem] bg-accent -z-[1];
+			}
+		}
+	}
+
+	// .app__decor
+	&__decor {
+		@apply w-full max-lg:-translate-y-[98%];
+	}
+
+	// .app__title
+	&__title {
+		@apply text-white min-w-fit  flex flex-col lg:mt-[199rem] sm:mt-[55rem];
+		@media (max-width: theme("screens.sm")) {
+			@apply text-[40rem] leading-[1.1] tracking-[0.8rem] my-4;
+		}
+		& strong {
+			-webkit-text-stroke-width: 2rem;
+			-webkit-text-stroke-color: #fff;
+			@apply text-transparent;
+			@media (max-width: theme("screens.lg")) {
+				-webkit-text-stroke-width: 1rem;
+			}
+		}
+	}
+
+	// .app__image
+	&__image {
+		@apply relative;
+		@screen lg {
+			@apply aspect-[373/680] w-[373rem]  ml-[4vw] mr-[2.4vw] z-10 lg:mt-[165rem];
+		}
+		@media (max-width: theme("screens.lg")) {
+			@apply aspect-[293/536]  max-w-[293rem] w-full  mt-[46rem] mx-auto;
+		}
+		@media (max-width: theme("screens.sm")) {
+			@apply aspect-[224/410]  max-w-[224rem] mt-[25rem]; //max-h-[265rem]
+		}
+		& img {
+			@apply absolute inset-0 size-full sm:object-contain;
+			@media (max-width: theme("screens.sm")) {
+				@apply object-cover object-top;
+			}
+		}
+	}
+
+	@screen lg {
+		// app__image-placeholder
+		&__image-placeholder {
+			@apply block shrink-0 pointer-events-none opacity-0 ml-[4vw] mr-[2.4vw];
+		}
+	}
+	// .app__text
+	&__text {
+		@apply relative text-white font-gilroy text-[80rem] font-bold leading-[1.1] tracking-[1.6rem] uppercase max-w-[693rem]  flex items-start gap-10 text-balance z-[1] w-full;
+
+		@media (max-width: theme("screens.lg")) {
+			@apply text-[30rem]  tracking-[0.6rem]  gap-3 w-fit max-w-[227rem];
+		}
+		&::before {
+			content: "";
+			@apply mt-[33rem] shrink-0 size-[30rem] rounded-round bg-accent;
+			@media (max-width: theme("screens.lg")) {
+				@apply mt-[7rem] size-[14rem];
+			}
+		}
+		// .app__text--1
+		&--1 {
+			// ml-[25.6vw] - between title and 1st el
+			@apply self-end mb-[224rem];
+			@media (max-width: theme("screens.lg")) {
+				@apply ml-[8vw] mb-[99rem];
+			}
+			@media (max-width: theme("screens.sm")) {
+				@apply ml-[25.4vw] mb-[17rem];
+			}
+		}
+		// .app__text--accent
+		&--accent {
+			&::before {
+				@apply absolute size-[324rem] rounded-round -left-[76rem] -top-[80rem] -z-[1];
+				@media (max-width: theme("screens.lg")) {
+					@apply size-[138rem]  -left-[53rem] -top-[37.5rem];
+				}
+			}
+		}
+		// .app__text--2
+		&--2 {
+			@apply ml-[19.1vw] mt-[186rem];
+			@media (max-width: theme("screens.lg")) {
+				@apply mb-[10vw] mt-[13.5rem];
+			}
+
+			@media (max-width: theme("screens.sm")) {
+				@apply ml-[15.4vw] mt-[15rem];
+			}
+		}
+		// .app__text--3
+		&--3 {
+			@apply ml-[16.5vw] mb-[224rem] self-end;
+			@media (max-width: theme("screens.lg")) {
+				@apply ml-[6.4vw] mb-[99rem];
+			}
+			@media (max-width: theme("screens.sm")) {
+				@apply ml-[18.7vw] mb-[17rem];
+			}
+		}
+		// .app__text--4
+		&--4 {
+			@apply ml-[13vw] mr-[6vw] mt-[157rem] max-w-[767rem];
+			@media (max-width: theme("screens.lg")) {
+				@apply ml-[6.4vw] mr-[5.2vw] mt-[16rem];
+			}
+
+			@media (max-width: theme("screens.sm")) {
+				@apply ml-[13.6vw] mt-[17rem];
+			}
+		}
+	}
+
+	// .app__progress
+	&__progress {
+		--progress: 0%;
+		--end-app-left: 100%;
+		&.progress {
+			.progress__line {
+				@apply bg-white/30;
+			}
+
+			.progress__fill {
+				background: linear-gradient(
+					to right,
+					#c0db4d 0%,
+					#c0db4d var(--end-app-left, 100%),
+					#1c252d var(--end-app-left, 100%),
+					#1c252d 100%
+				);
+			}
+
+			.progress__thumb.is-dark {
+				@apply bg-dark text-accent;
+			}
+		}
+		@screen lg {
+			@apply absolute z-10 bottom-[120rem] left-[180rem] right-20;
+		}
+
+		@media (max-width: theme("screens.lg")) {
+			@apply mx-auto max-w-[calc(100%-64rem)] mt-[84rem];
+		}
+	}
+	&__title,
+	&__text,
+	&__content {
+		@apply will-change-transform;
+	}
+}
+
+.end-app {
+	@apply w-full lg:max-w-[50vw] lg:px-[10vw] bg-accent lg:flex lg:justify-center max-w-[100vw];
+	// pr-[166rem] pl-[312rem] pr-[500rem]
+	// .end-app__content
+	&__content {
+		@apply text-dark flex flex-col lg:gap-16 sm:gap-9 gap-6 lg:items-start max-lg:items-center;
+	}
+	// .end-app__desc
+	&__desc {
+		@apply font-rubik uppercase lg:text-[56rem] sm:text-[29rem] text-[20rem] lg:font-medium font-bold leading-[1.1] lg:-tracking-[1.12rem] sm:-tracking-[0.58rem] tracking-[0.4rem];
+		@media (max-width: theme("screens.lg")) {
+			br {
+				@apply hidden;
+			}
+		}
+	}
+	// .end-app__btn
+	&__btn {
+		@apply rounded-round bg-dark text-accent grid place-items-center lg:size-[235rem] sm:size-[100rem] size-[72rem] aspect-square;
+		& svg {
+			@apply lg:size-[59rem] sm:size-[24.5rem] size-5;
+		}
+	}
+	// .end-app__about
+	&__about {
+		// @apply space-y-4;
+	}
+	// .end-app__text
+	&__text {
+		@apply font-gilroy uppercase  font-bold leading-[1] lg:tracking-[0.75rem] sm:tracking-[0.54rem] tracking-[0.37rem] lg:text-[37rem] sm:text-[27rem] text-base;
+	}
+	// .end-app__logo
+	&__logo {
+		@apply lg:aspect-[361/59]  lg:max-w-[361rem] w-full sm:max-w-[258rem] max-w-[178rem] sm:aspect-[258/63] aspect-[178/44] object-contain;
+	}
+}
+
+// 1. при скролле вниз появляется белый фон в самом верху (из-за добавленного декора) и низу
+// 3. прокрутку сделать более плавную с простым паралакс ефектом для елементов
+//!! меньше 640 пикселей позиция прилипния должна быть по самому низу секции( чтобы сохранить ефект обрезанного телефона

@@ -1,0 +1,57 @@
+.cta {
+	@apply pt-[117rem] pb-[114rem]  relative text-white z-[1];
+	@screen sm {
+		@apply py-[140rem];
+	}
+	@screen xl {
+		@apply pt-[182rem] pb-[130rem];
+	}
+	// .cta__decor-top
+	&__decor-top {
+		@apply fill-[#E4E7E8]  sm:-translate-y-[40%] -translate-y-[60%];
+		.dark & {
+			@apply fill-[#3A4751];
+		}
+	}
+
+	// .cta__bg
+	&__bg {
+		@apply absolute inset-0 size-full object-cover -z-[1] pointer-events-none;
+		& img {
+			@apply absolute inset-0 size-full object-cover;
+		}
+	}
+	// .cta__container
+	&__container {
+	}
+	// .cta__content
+	&__content {
+		@apply flex flex-col items-start xl:gap-10 sm:gap-6 gap-2
+		xl:max-w-[826rem];
+	}
+	// .cta__title
+	&__title {
+		@apply flex flex-col text-white;
+
+		strong {
+			-webkit-text-stroke-width: 2rem;
+			@apply text-transparent;
+			-webkit-text-stroke-color: white;
+		}
+
+		@media (max-width: theme("screens.sm")) {
+			@apply text-[40rem] leading-[1]  tracking-[0.8rem];
+			strong {
+				-webkit-text-stroke-width: 1rem;
+			}
+		}
+	}
+	// .cta__text
+	&__text {
+		@apply sm:text-[20rem] text-sm max-xl:max-w-[380rem] max-sm:max-w-[322rem];
+	}
+	// .cta__btn
+	&__btn {
+		@apply xl:mt-6 sm:mt-2 mt-6;
+	}
+}

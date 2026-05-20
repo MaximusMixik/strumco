@@ -1,0 +1,198 @@
+.testimonials {
+	@apply pt-[69rem] pb-[73rem] relative bg-bg fill-bg z-[1];
+	@screen sm {
+		@apply pt-[84rem] pb-[114rem];
+	}
+	@screen xl {
+		@apply pt-[103rem] pb-[138rem];
+	}
+
+	&__container {
+		@apply grid xl:gap-8 xl:grid-cols-[648fr_1020fr] gap-6 items-center pr-0;
+		// pr-0
+		// &:has(.slide-accent.swiper-slide-active) {
+		// 	@apply pr-10;
+		// }
+	}
+
+	&__title {
+		@apply flex flex-wrap xl:flex-col gap-x-3 xl:items-start max-sm:text-[36rem] xl:mx-auto max-w-[648rem];
+
+		mark {
+			@apply bg-transparent text-accent;
+		}
+		& > :nth-child(2) {
+			@apply text-right self-end xl:pr-[83rem];
+		}
+	}
+
+	&__content {
+		@apply flex flex-col gap-15 xl:w-[55vw] xl:max-w-[1020rem] max-xl:max-w-[calc(100vw-32rem)] max-sm:max-w-[calc(100vw-15rem)];
+
+		.progress__thumb {
+			@apply max-xl:size-12 max-sm:size-10 transition-all duration-300 cursor-pointer;
+			svg {
+				@apply max-xl:size-5 max-sm:size-4;
+			}
+		}
+		.progress__fill {
+			@apply transition-all duration-300;
+		}
+	}
+	// .testimonials__slider-wrap
+	&__slider-wrap {
+		@apply flex;
+	}
+
+	// .testimonials__slider
+	&__slider {
+		// @apply overflow-visible;
+		// clip-path: polygon(0% 0, 100% 0, 100% 100%, 0% 100%);
+		&:has(.slide-accent.swiper-slide-active) {
+			.swiper-slide:not(.slide-accent.swiper-slide-active) {
+				@apply opacity-0;
+			}
+		}
+	}
+	// .testimonials__track
+	&__track {
+		// @apply min-w-fit;
+	}
+	// testimonials__progress
+	&__progress {
+		@apply mr-4 max-sm:max-w-[calc(100vw-30rem)];
+	}
+	// .testimonials__slider-items
+	&__slider-items {
+		@apply flex relative self-stretch;
+	}
+	// .testimonials__slider-item
+	&__slider-item {
+		@apply sm:rounded-xl rounded-lg translate-x-1/2  transition-colors
+		xl:w-[160rem] sm:w-[72rem] w-[20rem]
+		xl:-ml-[80rem] sm:-ml-[36rem] -ml-[10rem] duration-500 self-stretch rounded-r-none;
+
+		// &:first-child(:not(:nth-child(2))) {
+		// 	@apply w-10;
+		// }
+		@media (max-width: theme("screens.sm")) {
+			&:not(:first-child) {
+				@apply -mr-[10rem];
+
+				&:last-child {
+					@apply -mr-[10rem] w-[40rem];
+				}
+			}
+		}
+
+		.light & {
+			&:nth-child(1) {
+				@apply bg-[#eff0f2];
+			}
+			&:nth-child(2) {
+				@apply bg-[#CED2D5];
+			}
+			&:nth-child(3) {
+				@apply bg-[#7A868E];
+			}
+			&:nth-child(4) {
+				@apply bg-[#54626B];
+			}
+			&:nth-child(5) {
+				@apply bg-dark;
+			}
+		}
+
+		.dark & {
+			&:nth-child(1) {
+				@apply bg-darkLight;
+			}
+			&:nth-child(2) {
+				@apply bg-[#54626B];
+			}
+			&:nth-child(3) {
+				@apply bg-[#7A868E];
+			}
+			&:nth-child(4) {
+				@apply bg-[#CED2D5];
+			}
+			&:nth-child(5) {
+				@apply bg-[#eff0f2];
+			}
+		}
+	}
+	// .testimonials__slide
+	&__slide {
+		@apply sm:max-w-[620rem] max-w-[320rem];
+		// @apply sm:max-w-[33vw] max-w-[320rem];
+
+		&.slide-accent.swiper-slide-active {
+			@apply max-sm:-ml-[20rem];
+		}
+	}
+}
+
+.slide-testimonial {
+	@apply text-textInverse rounded-xl  sm:p-8 p-5 bg-darkLight flex flex-col justify-between;
+	&.swiper-slide-next {
+		@apply bg-[#54626B];
+	}
+	.dark & {
+		@apply bg-[#EFF0F2];
+	}
+
+	// .slide-testimonial__header
+	&__header {
+		@apply flex items-center justify-between sm:gap-6 gap-2.5;
+	}
+	// .slide-testimonial__meta
+	&__meta {
+		@apply sm:space-y-[15rem] space-y-[5rem] sm:max-w-[290rem] max-w-[174rem] sm:mb-8 mb-6;
+	}
+	// .slide-testimonial__name
+	&__name {
+		@apply font-bold;
+	}
+	// .slide-testimonial__position
+	&__position {
+		@apply text-textInverse/80;
+	}
+	// .slide-testimonial__logo
+	&__logo {
+		@apply shrink-0 sm:aspect-[160/100] sm:max-w-[160rem] aspect-[96/60] max-w-[96rem] object-contain;
+		.light & {
+			mix-blend-mode: color-dodge;
+		}
+	}
+
+	// .slide-testimonial__content
+	&__content {
+	}
+
+	// .slide-testimonial__title
+	&__title {
+		@apply text-accent font-gilroy sm:text-[22rem] text-sm font-semibold sm:leading-[1.2] leading-[1.3] sm:tracking-[0.44rem] tracking-[0.32rem] uppercase  sm:mb-4 mb-[14rem];
+		.dark & {
+			@apply text-[#99BD00];
+		}
+	}
+	// .slide-testimonial__text
+	&__text {
+		@apply sm:mb-3 mb-1 sm:space-y-5 space-y-4;
+	}
+	// .slide-testimonial__arrow
+	&__arrow {
+		@apply ml-auto sm:size-[30rem] size-[26rem] text-accent grid place-items-center;
+		& svg {
+			@apply sm:size-[21rem] size-[18rem];
+		}
+	}
+}
+
+.slide-accent {
+	@apply bg-accent rounded-xl grid place-items-center p-8;
+	// .slide-accent__text
+	&__text {
+		@apply text-dark text-center font-gilroy sm:text-[24rem] text-[18rem] uppercase font-bold leading-[1.2] sm:tracking-[0.48rem] tracking-[0.36rem] max-w-[168rem];
+	}
+}

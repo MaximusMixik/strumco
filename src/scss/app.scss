@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "swiper/css";
+@import "swiper/css/effect-fade";
+
+@import "base";
+@import "components";
+
+@import "sections/hero";
+@import "sections/advantages";
+@import "sections/about";
+@import "sections/partners";
+@import "sections/testimonials";
+@import "sections/cta";
+@import "sections/app";
+@import "sections/ps";
+@import "sections/news";
