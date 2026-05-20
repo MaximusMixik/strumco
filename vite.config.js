@@ -18,7 +18,7 @@ import { execSync } from 'child_process';
 // }
 
 export default defineConfig(() => ({
-	base: '',
+	base: '/strumco/',
 	// base: './',
 
 	build: {
