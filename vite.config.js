@@ -17,9 +17,8 @@ import { execSync } from 'child_process';
 // 	}
 // }
 
-export default defineConfig(() => ({
-	base: '/strumco/',
-	// base: './',
+export default defineConfig(({ command }) => ({
+	base: command === 'build' ? '/strumco/' : '/',
 
 	build: {
 		emptyOutDir: true,

@@ -183,6 +183,7 @@
 			}
 
 			.progress__fill {
+				@apply transition-none;
 				background: linear-gradient(
 					to right,
 					#c0db4d 0%,
@@ -192,8 +193,11 @@
 				);
 			}
 
-			.progress__thumb.is-dark {
-				@apply bg-dark text-accent;
+			.progress__thumb {
+				@apply transition-none;
+				&.is-dark {
+					@apply bg-dark text-accent;
+				}
 			}
 		}
 		@screen lg {
