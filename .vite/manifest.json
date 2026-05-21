@@ -14,14 +14,14 @@
       "Rubik-Regular-Yf_VAIba.woff2"
     ],
     "css": [
-      "index-OV0uJ_dk.css"
+      "index-5j5rnFmc.css"
     ],
-    "file": "index-WDzv4sjX.js",
+    "file": "index-og7mGVg-.js",
     "isEntry": true,
     "src": "index.html"
   },
   "spritemap.svg": {
-    "file": ".svg",
+    "file": "spritemap.svg",
     "src": "spritemap.svg"
   },
   "src/fonts/Gilroy-Bold.woff2": {
