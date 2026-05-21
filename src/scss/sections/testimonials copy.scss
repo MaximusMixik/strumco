@@ -27,11 +27,8 @@
 	}
 
 	&__content {
-		@apply flex flex-col gap-15 xl:w-[55vw] xl:max-w-[1020rem] max-xl:max-w-[calc(100vw-32rem)] max-sm:max-w-[calc(100vw-15rem)] transition-all duration-300;
+		@apply flex flex-col gap-15 xl:w-[55vw] xl:max-w-[1020rem] max-xl:max-w-[calc(100vw-32rem)] max-sm:max-w-[calc(100vw-15rem)];
 
-		&:has(.slide-accent.swiper-slide-active) {
-			@apply max-sm:max-w-[calc(100vw-30rem)];
-		}
 		.progress__thumb {
 			@apply max-xl:size-12 max-sm:size-10 transition-all duration-300 cursor-pointer;
 			svg {
@@ -71,56 +68,55 @@
 	}
 	// .testimonials__slider-item
 	&__slider-item {
-		@apply xl:w-[80rem] sm:w-[36rem] w-[10rem]
-		  self-stretch  relative;
+		@apply sm:rounded-xl rounded-lg translate-x-1/2  transition-colors
+		xl:w-[160rem] sm:w-[72rem] w-[20rem]
+		xl:-ml-[80rem] sm:-ml-[36rem] -ml-[10rem] duration-500 self-stretch rounded-r-none;
 
-		// @media (max-width: theme("screens.sm")) {
-		// 	&:not(:first-child) {
-		// 		@apply -mr-[10rem];
-
-		// 		&:last-child {
-		// 			@apply -mr-[10rem] w-[40rem];
-		// 		}
-		// 	}
+		// &:first-child(:not(:nth-child(2))) {
+		// 	@apply w-10;
 		// }
+		@media (max-width: theme("screens.sm")) {
+			&:not(:first-child) {
+				@apply -mr-[10rem];
 
-		&::before {
-			content: "";
-			@apply absolute w-[300rem] h-full sm:rounded-xl rounded-lg transition-colors duration-500;
+				&:last-child {
+					@apply -mr-[10rem] w-[40rem];
+				}
+			}
 		}
 
 		.light & {
-			&:nth-child(1)::before {
+			&:nth-child(1) {
 				@apply bg-[#eff0f2];
 			}
-			&:nth-child(2)::before {
+			&:nth-child(2) {
 				@apply bg-[#CED2D5];
 			}
-			&:nth-child(3)::before {
+			&:nth-child(3) {
 				@apply bg-[#7A868E];
 			}
-			&:nth-child(4)::before {
+			&:nth-child(4) {
 				@apply bg-[#54626B];
 			}
-			&:nth-child(5)::before {
+			&:nth-child(5) {
 				@apply bg-dark;
 			}
 		}
 
 		.dark & {
-			&:nth-child(1)::before {
+			&:nth-child(1) {
 				@apply bg-darkLight;
 			}
-			&:nth-child(2)::before {
+			&:nth-child(2) {
 				@apply bg-[#54626B];
 			}
-			&:nth-child(3)::before {
+			&:nth-child(3) {
 				@apply bg-[#7A868E];
 			}
-			&:nth-child(4)::before {
+			&:nth-child(4) {
 				@apply bg-[#CED2D5];
 			}
-			&:nth-child(5)::before {
+			&:nth-child(5) {
 				@apply bg-[#eff0f2];
 			}
 		}
