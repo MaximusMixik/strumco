@@ -87,14 +87,16 @@ export default class TestimonialsSlider {
 		el.className = "testimonials__slider-item";
 
 		el.style.opacity = "0";
-		el.style.transform = "translateX(50%) scaleY(0.8)";
+		el.style.transform = " scaleY(0.8)";
+		// translateX(50%)
 		el.style.transition = "opacity 0.4s ease, transform 0.4s ease";
 
 		this.stack.appendChild(el);
 
 		el.getBoundingClientRect();
 		el.style.opacity = "1";
-		el.style.transform = "translateX(50%)";
+		// el.style.transform = "translateX(50%)";
+		el.style.transform = "scaleY(1)";
 	}
 
 	clearStack() {
@@ -102,7 +104,8 @@ export default class TestimonialsSlider {
 		items.forEach(item => {
 			item.style.transition = "opacity 0.3s ease, transform 0.3s ease";
 			item.style.opacity = "0";
-			item.style.transform = "translateX(50%) scaleY(0.8)";
+			item.style.transform = " scaleY(0.8)";
+			// translateX(50%)
 		});
 		setTimeout(() => { this.stack.innerHTML = ""; }, 350);
 	}

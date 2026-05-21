@@ -30,7 +30,7 @@
 		@apply flex flex-col gap-15 xl:w-[55vw] xl:max-w-[1020rem] max-xl:max-w-[calc(100vw-32rem)] max-sm:max-w-[calc(100vw-15rem)] transition-all duration-300;
 
 		&:has(.slide-accent.swiper-slide-active) {
-			@apply max-sm:max-w-[calc(100vw-30rem)];
+			@apply max-xl:max-w-[calc(100vw-64rem)] max-sm:max-w-[calc(100vw-30rem)];
 		}
 		.progress__thumb {
 			@apply max-xl:size-12 max-sm:size-10 transition-all duration-300 cursor-pointer;

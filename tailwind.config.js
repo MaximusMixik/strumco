@@ -7,7 +7,10 @@ import colors from 'tailwindcss/colors';
 module.exports = {
 	// darkMode: 'selector',
 	darkMode: 'class',
-	content: ["./src/**/*.{htm,html,js,scss}"],
+	content: [
+		"./*.html",
+		"./src/**/*.{html,js,scss}"
+	],
 	theme: {
 		fontFamily: {
 			'gilroy': ['Gilroy', 'sans-serif'],

@@ -37,18 +37,17 @@ export default defineConfig(({ command }) => ({
 		// Vue(),
 		VitePluginSvgSpritemap('./src/icons/*.svg', {
 			output: {
-				filename: '[extname]',
-				name: 'spritemap.svg',
+				// filename: '[extname]',
+				// name: 'spritemap.svg',
+				filename: 'spritemap.svg',
 				view: false,
 				use: true,
 			},
 		}),
 		viteStaticCopy({
 			targets: [
-				{
-					src: 'src/img/*',
-					dest: 'img'
-				}
+				{ src: 'src/img/*', dest: 'img' },
+				{ src: 'spritemap.svg', dest: '' }
 			]
 		}),
 		// imageProcessPlugin()
@@ -70,7 +69,10 @@ export default defineConfig(({ command }) => ({
 			host: 'localhost'
 		},
 	},
-
+	preview: {
+		port: 4173,
+		base: '/strumco/',
+	},
 	define: {
 		__VUE_OPTIONS_API__: true,
 		__VUE_PROD_DEVTOOLS__: false,
