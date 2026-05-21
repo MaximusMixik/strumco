@@ -1,5 +1,7 @@
 import '../scss/app.scss'
 
+import './config/spritemap.js';
+
 import TailwindThemeColor from './components/TailwindThemeColor.js';
 import Menu from './components/header-menu.js';
 import MenuDropdown from "./components/menuDropdown.js";

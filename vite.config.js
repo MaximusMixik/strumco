@@ -7,6 +7,9 @@ import fs from 'fs';
 import path from 'path';
 import { execSync } from 'child_process';
 
+
+
+
 // function imageProcessPlugin() {
 // 	return {
 // 		name: 'image-process',
