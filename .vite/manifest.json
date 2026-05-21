@@ -1,0 +1,71 @@
+{
+  "index.html": {
+    "assets": [
+      "Gilroy-Bold-07UIz9f4.woff2",
+      "Gilroy-Medium-1QAXjMve.woff2",
+      "Gilroy-Regular-hBm2TtLR.woff2",
+      "Montserrat-Bold-wfgOfKIw.woff2",
+      "Montserrat-Medium-FFG3GBmb.woff2",
+      "Gilroy-SemiBold-mXETxHy0.woff2",
+      "Montserrat-Regular-_niAJqxQ.woff2",
+      "Montserrat-SemiBold-0u-bH7_n.woff2",
+      "Rubik-Bold-bw9-4Tdh.woff2",
+      "Rubik-Medium-LGXcxXJ2.woff2",
+      "Rubik-Regular-Yf_VAIba.woff2"
+    ],
+    "css": [
+      "index-OV0uJ_dk.css"
+    ],
+    "file": "index-WDzv4sjX.js",
+    "isEntry": true,
+    "src": "index.html"
+  },
+  "spritemap.svg": {
+    "file": ".svg",
+    "src": "spritemap.svg"
+  },
+  "src/fonts/Gilroy-Bold.woff2": {
+    "file": "Gilroy-Bold-07UIz9f4.woff2",
+    "src": "src/fonts/Gilroy-Bold.woff2"
+  },
+  "src/fonts/Gilroy-Medium.woff2": {
+    "file": "Gilroy-Medium-1QAXjMve.woff2",
+    "src": "src/fonts/Gilroy-Medium.woff2"
+  },
+  "src/fonts/Gilroy-Regular.woff2": {
+    "file": "Gilroy-Regular-hBm2TtLR.woff2",
+    "src": "src/fonts/Gilroy-Regular.woff2"
+  },
+  "src/fonts/Gilroy-SemiBold.woff2": {
+    "file": "Gilroy-SemiBold-mXETxHy0.woff2",
+    "src": "src/fonts/Gilroy-SemiBold.woff2"
+  },
+  "src/fonts/Montserrat-Bold.woff2": {
+    "file": "Montserrat-Bold-wfgOfKIw.woff2",
+    "src": "src/fonts/Montserrat-Bold.woff2"
+  },
+  "src/fonts/Montserrat-Medium.woff2": {
+    "file": "Montserrat-Medium-FFG3GBmb.woff2",
+    "src": "src/fonts/Montserrat-Medium.woff2"
+  },
+  "src/fonts/Montserrat-Regular.woff2": {
+    "file": "Montserrat-Regular-_niAJqxQ.woff2",
+    "src": "src/fonts/Montserrat-Regular.woff2"
+  },
+  "src/fonts/Montserrat-SemiBold.woff2": {
+    "file": "Montserrat-SemiBold-0u-bH7_n.woff2",
+    "src": "src/fonts/Montserrat-SemiBold.woff2"
+  },
+  "src/fonts/Rubik-Bold.woff2": {
+    "file": "Rubik-Bold-bw9-4Tdh.woff2",
+    "src": "src/fonts/Rubik-Bold.woff2"
+  },
+  "src/fonts/Rubik-Medium.woff2": {
+    "file": "Rubik-Medium-LGXcxXJ2.woff2",
+    "src": "src/fonts/Rubik-Medium.woff2"
+  },
+  "src/fonts/Rubik-Regular.woff2": {
+    "file": "Rubik-Regular-Yf_VAIba.woff2",
+    "src": "src/fonts/Rubik-Regular.woff2"
+  }
+}
